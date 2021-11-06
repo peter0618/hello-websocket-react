@@ -1,20 +1,16 @@
-import { Content } from 'antd/lib/layout/layout';
 import React from 'react';
 import styled from 'styled-components';
-import { Avatar, Breadcrumb, Layout, List, Menu, Space, Table, TableColumnsType, Tag } from 'antd';
-import Sider from 'antd/lib/layout/Sider';
-import SubMenu from 'antd/lib/menu/SubMenu';
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
+import { Space, Table, Tag } from 'antd';
 
 const StyledComponent = styled.div``;
 
-function ChatRoomList(): JSX.Element {
+function ChatRoomList() {
   const columns = [
     {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: text => <a>{text}</a>,
+      render: (text: any) => <a>{text}</a>,
     },
     {
       title: 'Age',
@@ -30,9 +26,9 @@ function ChatRoomList(): JSX.Element {
       title: 'Tags',
       key: 'tags',
       dataIndex: 'tags',
-      render: tags => (
+      render: (tags: any) => (
         <>
-          {tags.map(tag => {
+          {tags.map((tag: any) => {
             let color = tag.length > 5 ? 'geekblue' : 'green';
             if (tag === 'loser') {
               color = 'volcano';
@@ -49,7 +45,7 @@ function ChatRoomList(): JSX.Element {
     {
       title: 'Action',
       key: 'action',
-      render: (text, record) => (
+      render: (text: any, record: any) => (
         <Space size="middle">
           <a>Invite {record.name}</a>
           <a>Delete</a>
